@@ -1,5 +1,5 @@
 window.addEventListener('load',()=>{
-console.log("About page loaded");
+console.log("page loaded");
 // Add your JS code here
 });
 <li class="nav-item">

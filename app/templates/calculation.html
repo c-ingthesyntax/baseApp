@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block css_js %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calculation.css') }}">
+<script src="{{url_for('static',filename='js/calculation.js')}}"></script>
+{% endblock %}
+{% block main %}
+<style>
+    .summationblock{
+        border: 1px solid #1ecbe1;
+        border-radius: 7px;
+        background-color: white;
+        width: 320px;
+        height: 170px;
+        float: left;
+        margin: 10px;
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .summationblock > h5{
+        background-color: #cbd5e1;
+    }
+
+    .summationblock > button{
+        float: left;
+        margin: 10px;
+        color: black;
+
+    }
+
+    .summationblock > button:hover{
+        float: left;
+        margin: 10px;
+        color: cornsilk;
+        background-color: #1ecbe1;
+
+    }
+
+    .multiplicationblock{
+        border: 1px solid #1ecbe1;
+        border-radius: 7px;
+        background-color: white;
+        width: 320px;
+        height: 170px;
+        float: left;
+        margin: 10px auto;
+        text-align: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .multiplicationblock > h5{
+        background-color: #cbd5e1;
+    }
+
+    .multiplicationblock > button{
+        float: left;
+        margin: 10px;
+    }
+
+    .multiplicationblock > button:hover{
+        float: left;
+        margin: 10px;
+        color: cornsilk;
+        background-color: #1ecbe1;
+
+    }
+
+    .conversionblock{
+        border: 1px solid #1ecbe1;
+        border-radius: 7px;
+        background-color: white;
+        width: 320px;
+        height: 170px;
+        float: left;
+        margin: 10px;
+        text-align:center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .conversionblock > h5{
+        background-color: #cbd5e1;
+    }
+
+    .conversionblock > button{
+        float: left;
+        margin: 10px;
+    }
+
+    .conversionblock > button:hover{
+        float: left;
+        margin: 10px;
+        color: cornsilk;
+        background-color: #1ecbe1;
+    }
+
+    #addend1{
+        width: 100px;
+        height: 50px;
+        background-color: transparent;
+    }
+
+    #addend2{
+        width: 100px;
+        height: 50px;
+        background-color: transparent;
+    }
+
+    #multiplicand{
+        width: 100px;
+        height: 50px;
+        background-color: transparent;
+    }
+
+    #multiplier{
+        width: 100px;
+        height: 50px;
+        background-color: transparent;
+    }
+
+</style>
+<div class="summationblock">
+    <h5>Sum of two integers</h5>
+    <input type="number" id="addend1" name="num1" required>
+    <span>+</span>
+    <input type="number" id="addend2" name="num2" required>
+    <br>
+    <p>The answer will be displayed here</p>
+    <button>Submit</button>
+</div>
+
+<div class="multiplicationblock">
+    <h5>Product of two integers</h5>
+    <input type="number" id="multiplicand" name="num1" required>
+    <span>+</span>
+    <input type="number" id="multiplier" name="num2" required>
+    <br>
+    <p>The answer will be displayed here</p>
+    <button>Submit</button>
+</div>
+
+<div class="conversionblock">
+    <h5>Temperature Conversion</h5>
+    <div style="width: 100px; height: 50px; border: 1px solid #000000; background-color:transparent; margin: 0 auto;">
+        <p></p>
+    </div>
+    <p>The answer will be displayed here</p> 
+    <button>Submit</button>
+</div>
+<!-- used https://www.w3schools.com/tags/tag_div.asp as a reference-->
+{% endblock %}

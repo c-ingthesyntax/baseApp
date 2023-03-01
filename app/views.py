@@ -57,6 +57,11 @@ def about():
     """Render website's About page."""
     return render_template('about.html', name="my Home Automation System")
 
+@app.route('/calculation')
+def calculation():
+    """Render website's Calculation page."""
+    return render_template('calculation.html', name="Calculation page")
+
 @app.route('/text', methods=["GET","POST"])
 def text():
     """Returns text"""
