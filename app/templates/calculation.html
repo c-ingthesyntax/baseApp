@@ -16,6 +16,7 @@
         text-align: center;
         align-items: center;
         overflow: hidden;
+        margin-top: 20px;
     }
     .summationblock > h5{
         background-color: #cbd5e1;
@@ -47,6 +48,7 @@
         text-align: center;
         align-items: center;
         overflow: hidden;
+        margin-top: 20px;
     }
 
     .multiplicationblock > h5{
@@ -77,6 +79,7 @@
         text-align:center;
         align-items: center;
         overflow: hidden;
+        margin-top: 20px;
     }
     
     .conversionblock > h5{
@@ -119,6 +122,13 @@
         background-color: transparent;
     }
 
+    #tempval{
+        width: 100px;
+        height: 50px;
+        background-color: transparent;
+
+    }
+
 </style>
 <div class="summationblock">
     <h5>Sum of two integers</h5>
@@ -142,9 +152,7 @@
 
 <div class="conversionblock">
     <h5>Temperature Conversion</h5>
-    <div style="width: 100px; height: 50px; border: 1px solid #000000; background-color:transparent; margin: 0 auto;">
-        <p></p>
-    </div>
+    <input type="number" id="tempval" name="num1" required>
     <p>The answer will be displayed here</p> 
     <button>Submit</button>
 </div>
