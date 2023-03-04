@@ -130,31 +130,34 @@
     }
 
 </style>
-<div class="summationblock">
-    <h5>Sum of two integers</h5>
-    <input type="number" id="addend1" name="num1" required>
-    <span>+</span>
-    <input type="number" id="addend2" name="num2" required>
-    <br>
-    <p>The answer will be displayed here</p>
-    <button>Submit</button>
-</div>
 
-<div class="multiplicationblock">
-    <h5>Product of two integers</h5>
-    <input type="number" id="multiplicand" name="num1" required>
-    <span>+</span>
-    <input type="number" id="multiplier" name="num2" required>
-    <br>
-    <p>The answer will be displayed here</p>
-    <button>Submit</button>
-</div>
+<body> 
+    <div class="summationblock">
+        <h5>Sum of two integers</h5>
+        <input type="number" id="addend1" name="addend1" required>
+        <span>+</span>
+        <input type="number" id="addend2" name="addend2" required>
+        <p class="sumanswer">The answer will be displayed here</p>
+        <button class="Sumbtn">Submit</button>
+    </div>
+    
+    <div class="multiplicationblock">
+        <h5>Product of two integers</h5>
+        <input type="number" id="multiplicand" name="num1" required>
+        <span>x</span>
+        <input type="number" id="multiplier" name="num2" required>
+        <br>
+        <p>The answer will be displayed here</p>
+        <button>Submit</button>
+    </div>
+    
+    <div class="conversionblock">
+        <h5>Temperature Conversion</h5>
+        <input type="number" id="tempval" name="num1" required>
+        <p>The answer will be displayed here</p> 
+        <button>Submit</button>
+    </div>
+</body>
 
-<div class="conversionblock">
-    <h5>Temperature Conversion</h5>
-    <input type="number" id="tempval" name="num1" required>
-    <p>The answer will be displayed here</p> 
-    <button>Submit</button>
-</div>
 <!-- used https://www.w3schools.com/tags/tag_div.asp as a reference-->
 {% endblock %}

@@ -6,3 +6,4 @@ app.config.from_object(Config)
  
 
 from app import views 
+from .function import DB, Mqtt

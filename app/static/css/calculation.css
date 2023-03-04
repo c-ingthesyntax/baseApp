@@ -5,7 +5,12 @@
     align-items: center;
     min-height: 900px;
     }
-    .aboutblock img {
+.aboutblock img {
     max-width: 400px;
     width: 100%;
-    }
+    
+}
+
+body {
+    background-image: linear-gradient(rgb(216, 225, 110), rgb(105, 201, 105));
+}
