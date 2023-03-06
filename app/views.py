@@ -126,6 +126,19 @@ def mul2Numbers():
         mulNumbers = int(num1) * int(num2)
         return f"The product of {num1} and {num2} is {mulNumbers}"
     return render_template('404.html'), 404 
+
+@app.route('/conv', methods=["POST"])
+def convTemp():
+    """Return the Product of two numbers"""
+    if request.method == "POST":
+        # Process POST requests 
+        data = request.get_json()
+        Celctemp = data["number1"]
+        # Do Fahrenheit temp conversion
+        Fahrtemp = (int(Celctemp) * 9/5) + 32
+        # Fahrtemp = int(Fahrtemp) 
+        return f"{Celctemp}°C is {Fahrtemp}°F"
+    return render_template('404.html'), 404 
  
 
 ###
