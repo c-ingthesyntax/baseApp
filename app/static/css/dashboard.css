@@ -1,0 +1,67 @@
+body {
+    background-image: linear-gradient(rgb(216, 225, 110), rgb(105, 201, 105));
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    }
+    .header{
+    background-color: #755E63;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .dashboard{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    }
+    .dashboard_item{
+    width: 200px;
+    height: 250px;
+    background: #fff;
+    color: black;
+    padding: 16px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    .dashboard_item > h4{
+    margin: 0;
+    border-bottom: 1px solid black;
+    width: 100%;
+    }
+    .dashboard_item > p{
+    font-size: 20px;
+    margin: 0;
+    color: lightseagreen;
+    font-weight: bold;
+    }
+    .mqttConnected {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: turquoise;
+    border: 1px solid cornsilk;
+    padding: 1px;
+    }
+    .mqttdisconnected {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: darkred;
+    border: 1px solid cornsilk;
+    padding: 1px;
+    }
+    
+    /*#bedroomtitle{
+        color: coral;
+    }
+    
+    .bedroomOn{
+        width: 30px;
+        height: 30px;
+    }*/

@@ -171,7 +171,7 @@ class DB:
         # INSERT DATA PUBLISHED FROM CCS HARDWARE INTO THE DATA COLLECTION OF THE DATABASE      
         try:
             remotedb 	= self.remoteMongo('mongodb://%s:%s@%s:%s' % (self.username, self.password,self.server,self.port))
-            result      = remotedb["ELET2415"]["data"].insert_one(data)
+            result      = remotedb["Weatherstation"]["data"].insert_one(data)
         except Exception as e:
             error = str(e)
             if not  "duplicate" in error:
@@ -179,21 +179,22 @@ class DB:
             return False
         else:                  
             return True 
-    
+
     def plotStaticGraph(self,variable,start,end):
-        # RETRIEVE ALL THE DATA FOR A SPECIFIC VARIABLE BETWEEN START AND END TIMESTAMPS 
-        try: 
-            remotedb    = self.remoteMongo('mongodb://%s:%s@%s:%s' % (self.username, self.password,self.server,self.port)) 
-            result      = list(remotedb["ELET2415"]["data"].aggregate([ { '$match': { 'TIMESTAMP': { '$gte': start, '$lte': end } } }, { '$group': { '_id': None, 'data': { '$push': { 'timestamp': '$TIMESTAMP', 'outtemp': f'${variable}' } } } }, { '$project': { '_id': 0 } } ])) 
-            data        = [[x['timestamp'],x['outtemp']] for x in result[0]["data"]] 
-            # print(data) 
-        except Exception as e: 
+        # RETRIEVE ALL THE DATA FOR A SPECIFIC VARIABLE BETWEEN START AND END TIMESTAMPS
+        try:
+            remotedb = self.remoteMongo('mongodb://%s:%s@%s:%s' % (self.username, self.password,self.server,self.port))
+            result = list(remotedb["Weatherstation"]["data"].aggregate([ { '$match': { 'TIMESTAMP': { '$gte': start, 
+    '$lte': end } } }, { '$group': { '_id': None, 'data': { '$push': { 'timestamp': '$TIMESTAMP', 'outtemp': f'${variable}' } 
+    } } }, { '$project': { '_id': 0 } } ]))
+            data = [[x['timestamp'],x['outtemp']] for x in result[0]["data"]]
+            # print(data)
+        except Exception as e:
             print(str(e))
             return []
-        else:                   
-            return data 
+        else: 
+            return data
 
- 
        
 
 

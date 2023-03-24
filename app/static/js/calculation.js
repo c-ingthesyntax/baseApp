@@ -12,7 +12,7 @@ window.addEventListener('load',()=>{
     let Convbtn         = document.querySelector(".Convbtn");  // Query by HTML class & element type. Select <>button element
     let Sumanswer       = document.querySelector(".sumanswer");       // Query by HTML class & element type. Select <p> element
     let Multanswer      = document.querySelector(".multanswer"); 
-    let Convanswer      = document.querySelector(".convanswer"); 
+    let Convanswer      = document.querySelector(".convanswer");     
 
     Summationbtn.addEventListener("click", async ()=>{ 
         //send message 

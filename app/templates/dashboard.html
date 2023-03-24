@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block css_js %}
+		<!-- Link JavaScript file to html document -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+	<!-- Link JavaScript file to html document -->
+	<script src="{{url_for('static',filename='js/og dashboard.js')}}"></script>
+	<script src="{{url_for('static',filename='js/mqttws31.js')}}"></script>
+	<!-- Add font from Google fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+{% endblock %}
+
+{% block main %}
+	<div class="header">
+		<h1>Home Automation Dashboard</h1>
+	</div>
+	
+	<hr>
+		<div id="messages"></div>
+		<div id="status"></div>
+	<hr>
+
+	<div class="date"><span>Start</span> <input id="start" type="date" placeholder="Start"> <span>End</span> <input id="end"
+	type="date" placeholder="End"> <button class="plot">Plot</button></div>
+	
+	<figure class="highcharts-figure">
+		<div id="livedata"></div>
+	</figure>
+
+	<figure class="highcharts-figure">
+		<div id="livedata"></div>
+	</figure>
+
+	<ul class="dashboard">
+		<li class="dashboard_item kitchen">
+			<h4 id="kitchenTitle" >Kitchen</h4>
+			<p class="kitchenState">OFF</p>
+			 <img class="kitchenImg" src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">   
+			<!--<button type="submit" onClick="btntog()">Toggle</button> -->
+			<button>Toggle</button>
+		</li>
+			
+		<li class="dashboard_item livingroom">
+			<h4 id="livingroomTitle">Livingroom</h4>
+			<p class="livingroomState">OFF</p>
+			<img class="livingroomImg" src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">
+			<button>Toggle</button>
+		</li>
+			
+		<li class="dashboard_item bathroom">
+			<h4 id="bathroomTitle">Bathroom</h4>
+			<p class="bathroomState">OFF</p>
+			<img class="bathroomImg"src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">  
+			<button>Toggle</button>
+		</li>
+			
+		<li class="dashboard_item studyroom">
+			<h4 id="studyroomTitle">Studyroom</h4>
+			<p class="studyroomState">OFF</p>
+			<img class="studyroomImg" src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">  
+			<button>Toggle</button>
+		</li>
+			
+		<li class="dashboard_item hall">
+			<h4 id="hallTitle">Hall</h4>
+			<p class="hallState">OFF</p>
+			 <img class="hallImg" src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">  
+			<button>Toggle</button>
+			</li>
+
+		<li class="dashboard_item bedroom">
+			<h4 id="bedroomTitle">Bedroom</h4>
+			<p class="bedroomState">0</p>
+			<img class="bedroomImg" src="..\static\lightbulb-off-svgrepo-com.png" alt=" Lightbulb on" width="80" height="80">
+			<!-- <button>Toggle</button> -->
+		</li>
+			
+		<li class="dashboard_item frontdoor">
+			<h4 id="frontdoorTitle">Front Door</h4>
+			<p class="frontdoorState">CLOSED</p>
+		 	 <img class="frontdoorImg" src="..\static\door-svgrepo-com.svg" alt=" Lightbulb on" width="80" height="80">  
+			</li>
+			
+			<li class="dashboard_item balconydoor">
+				<h4 id="balcfrontdoorTitle" >Balcony Door</h4>		
+				<p class="balcdoorState" >CLOSED</p>
+				<img class="balcdoorImg" src="..\static\door-svgrepo-com.svg" alt=" Lightbulb on" width="80" height="80">
+			</li>
+			<!-- Create remaining li elements above -->
+	</ul>
+{% endblock %}
